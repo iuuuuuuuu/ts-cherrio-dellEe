@@ -46,8 +46,10 @@ export default class DellAnalyzer implements Analyze {
     filePath: string
   ): string {
     let fileContent: Content = {};
-    if (fs.existsSync(filePath)) {
-      fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const oldFileContent: string = fs.readFileSync(filePath, 'utf8');
+
+    if (fs.existsSync(filePath) && oldFileContent) {
+      fileContent = JSON.parse(oldFileContent);
     }
     fileContent[courseInfo.timer] = courseInfo.data;
     return JSON.stringify(fileContent);

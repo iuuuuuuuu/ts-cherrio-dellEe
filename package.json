@@ -1,6 +1,18 @@
 {
   "scripts": {
-    "dev": "nodemon ./src/croller.ts --ignore data"
+    "dev:start": "nodemon ./src/croller.ts",
+    "run": "nodemon ./src/croller",
+    "tsc": "tsc -w",
+    "dev": "concurrently yarn dev:start & yarn tsc",
+    "dev1": "concurrently yarn:dev:*"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/*",
+      "dist/*",
+      "node_modules"
+    ],
+    "delay": "2500"
   },
   "name": "ts-cheerio",
   "version": "1.0.0",
@@ -11,6 +23,7 @@
     "superagent": "^8.0.9"
   },
   "devDependencies": {
-    "@types/superagent": "^4.1.16"
+    "@types/superagent": "^4.1.16",
+    "concurrently": "^7.6.0"
   }
 }
