@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "nodemon ./src/croller.ts --ignore data"
+  },
+  "name": "ts-cheerio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "superagent": "^8.0.9"
+  },
+  "devDependencies": {
+    "@types/superagent": "^4.1.16"
+  }
+}
