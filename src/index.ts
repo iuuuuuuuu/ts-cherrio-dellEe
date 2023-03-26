@@ -1,3 +1,6 @@
+import './controller/LoginController';
+import './controller/CrollerController';
+
 import express, { NextFunction, Request, Response } from 'express';
 
 import bodyParse from 'body-parser';
